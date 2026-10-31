@@ -1,0 +1,2 @@
+/* The outline uses a Shadow Root so that it does not change editor or theme styles. */
+.siyuan-general-outline-topbar--disabled { opacity: .45; }
