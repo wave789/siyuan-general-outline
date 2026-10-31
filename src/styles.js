@@ -22,7 +22,7 @@ module.exports = `
   .marker { display: block; width: var(--mark-width, 8px); height: 3px; border-radius: 4px; background: currentColor; opacity: .52; }
   .entry[aria-current="location"] { color: var(--sgo-accent); }
   .entry[aria-current="location"] .marker { width: 16px; opacity: 1; }
-  .entry:hover { color: var(--sgo-text); }
+  .entry:not([aria-current="location"]):hover { color: var(--sgo-text); }
   .entry:hover .marker { opacity: 1; }
   .entry:focus-visible { outline: 1px solid var(--sgo-accent); outline-offset: -1px; }
   :host([data-expanded]) .rail { width: max-content; min-width: 140px; max-width: var(--sgo-width, 340px);
