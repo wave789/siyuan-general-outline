@@ -1,7 +1,7 @@
 import { readFile, writeFile, readdir } from "node:fs/promises";
 import { deflateRawSync } from "node:zlib";
 const root = new URL("../", import.meta.url);
-const paths = ["index.js", "index.css", "plugin.json", "icon.png", "assets/icon.svg", "README.md", "LICENSE"];
+const paths = ["index.js", "index.css", "plugin.json", "icon.png", "assets/icon.svg", "assets/wechat-reward.png", "preview.png", "README.md", "LICENSE"];
 for (const name of (await readdir(new URL("i18n/", root))).sort()) if (name.endsWith(".json")) paths.push(`i18n/${name}`);
 const table = Array.from({ length: 256 }, (_, n) => { for (let i = 0; i < 8; i++) n = n & 1 ? 0xedb88320 ^ (n >>> 1) : n >>> 1; return n >>> 0; });
 function crc32(bytes) { let value = 0xffffffff; for (const byte of bytes) value = table[(value ^ byte) & 255] ^ (value >>> 8); return (value ^ 0xffffffff) >>> 0; }
